@@ -1,0 +1,385 @@
+/* SafeWebGuard Stylesheet - Light & Dark Modes */
+
+:root {
+  --primary: #10b981;
+  --primary-dark: #059669;
+  --primary-light: #34d399;
+  --secondary: #06b6d4;
+  
+  /* Light Mode Defaults (Default on First Load) */
+  --bg-body: #f8fafc;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-light: #64748b;
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --card-border: rgba(226, 232, 240, 0.95);
+  --nav-bg: rgba(255, 255, 255, 0.92);
+  --nav-border: rgba(226, 232, 240, 0.85);
+  --panel-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+  --mesh-opacity: 0.35;
+  --section-alt: #f1f5f9;
+}
+
+html.dark {
+  /* Dark Mode */
+  --bg-body: #090d16;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-light: #64748b;
+  --card-bg: rgba(16, 24, 39, 0.75);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --nav-bg: rgba(9, 13, 22, 0.88);
+  --nav-border: rgba(255, 255, 255, 0.06);
+  --panel-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  --mesh-opacity: 0.9;
+  --section-alt: #0b1120;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  overflow-x: hidden;
+  line-height: 1.6;
+  direction: rtl;
+  text-align: right;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.quran-font {
+  font-family: 'Amiri', serif;
+}
+
+/* Glassmorphism Cards */
+.glass-panel {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--panel-shadow);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-nav {
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--nav-border);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* Gradients */
+.text-gradient {
+  background: linear-gradient(135deg, #059669 0%, #0891b2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.dark .text-gradient {
+  background: linear-gradient(135deg, #34d399 0%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Mesh Glow circles */
+.mesh-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--mesh-opacity);
+  transition: opacity 0.3s ease;
+}
+
+.mesh-circle-1 {
+  position: absolute;
+  top: -10%;
+  right: 5%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: pulse-slow 8s infinite alternate ease-in-out;
+}
+
+.mesh-circle-2 {
+  position: absolute;
+  top: 35%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.18) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(70px);
+  animation: pulse-slow 10s infinite alternate-reverse ease-in-out;
+}
+
+.mesh-circle-3 {
+  position: absolute;
+  bottom: 10%;
+  right: 20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+@keyframes pulse-slow {
+  0% { transform: scale(1) translateY(0); opacity: 0.8; }
+  100% { transform: scale(1.15) translateY(30px); opacity: 1; }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(0.4deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Android Phone Mockup Frame (Samsung Galaxy / Pixel Style) */
+.android-phone {
+  border: 9px solid #1e293b;
+  border-radius: 38px;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5), 0 0 35px rgba(16, 185, 129, 0.2);
+  background: #090d16;
+  overflow: hidden;
+  position: relative;
+  max-width: 330px;
+  margin: 0 auto;
+}
+
+/* Android Side Buttons (Power & Volume Rockers) */
+.android-phone::before {
+  content: '';
+  position: absolute;
+  top: 100px;
+  right: -12px;
+  width: 4px;
+  height: 55px;
+  background: #334155;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  z-index: 25;
+}
+
+.android-phone::after {
+  content: '';
+  position: absolute;
+  top: 175px;
+  right: -12px;
+  width: 4px;
+  height: 38px;
+  background: #334155;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  z-index: 25;
+}
+
+/* Punch-Hole Front Camera (Android Standard) */
+.android-camera-punch {
+  width: 12px;
+  height: 12px;
+  background: #030712;
+  border: 1.5px solid #1e293b;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+}
+
+.android-camera-punch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 3px;
+  height: 3px;
+  background: rgba(59, 130, 246, 0.7);
+  border-radius: 50%;
+}
+
+/* Android Navigation Bar at Bottom */
+.android-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 8px 40px;
+  background: #060911;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.android-nav-btn {
+  color: #64748b;
+  font-size: 13px;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+.android-nav-btn:hover {
+  color: #10b981;
+  transform: scale(1.15);
+}
+
+/* Modern Robust Toggle Switch for Mockup */
+.mockup-switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background-color: #475569;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  user-select: none;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.mockup-switch.active {
+  background-color: #10b981;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.4);
+}
+
+.mockup-switch-knob {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 18px;
+  height: 18px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.mockup-switch.active .mockup-switch-knob {
+  transform: translateX(-20px);
+}
+
+.mockup-switch:not(.active) .mockup-switch-knob {
+  transform: translateX(0);
+}
+
+/* Theme Mode Switch Button */
+.theme-toggle-btn {
+  position: relative;
+  width: 62px;
+  height: 32px;
+  border-radius: 9999px;
+  background-color: #e2e8f0;
+  border: 1px solid #cbd5e1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+html.dark .theme-toggle-btn {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+.theme-toggle-knob {
+  position: absolute;
+  top: 3px;
+  right: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease;
+}
+
+html.dark .theme-toggle-knob {
+  transform: translateX(-30px);
+  background-color: #0f172a;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-body);
+}
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #1e293b;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #10b981;
+}
+
+/* FAQ Accordion Styling - Smooth & Leak-free */
+.faq-item {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.faq-item.active {
+  border-color: rgba(16, 185, 129, 0.5) !important;
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.12);
+}
+
+.faq-content {
+  animation: faqFadeSlide 0.25s ease-out forwards;
+}
+
+@keyframes faqFadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Toast message */
+#toast {
+  visibility: hidden;
+  min-width: 260px;
+  background-color: #064e3b;
+  color: #a7f3d0;
+  text-align: center;
+  border-radius: 14px;
+  padding: 16px 20px;
+  position: fixed;
+  z-index: 1000;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #10b981;
+  box-shadow: 0 15px 35px -5px rgba(0,0,0,0.4);
+  transition: visibility 0s, opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+#toast.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+}

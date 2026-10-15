@@ -1,0 +1,1026 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeWebGuard | حارس الويب العائلي - الحصن الرقمي لأبنائك</title>
+    
+    <!-- Meta & SEO -->
+    <meta name="description" content="تطبيق حارس الويب العائلي - درع إسلامي تقني لحماية الأبناء والأسرة من المحتوى الإباحي والمواقع الضارة على أجهزة أندرويد مع ميزة منع الإيقاف والـ VPN المشفر.">
+    <meta name="keywords" content="حجب المواقع الإباحية, حماية الأسرة, حماية الأطفال, SafeWebGuard, فلتر إنترنت, حماية أندرويد, ترك ذنوب الخلوات">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            900: '#064e3b',
+                        },
+                        cyan: {
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                            600: '#0891b2',
+                        },
+                        dark: {
+                            950: '#040711',
+                            900: '#090d16',
+                            800: '#0f172a',
+                            700: '#1e293b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 dark:bg-dark-900 text-slate-800 dark:text-gray-100 antialiased selection:bg-emerald-500 selection:text-white transition-colors duration-300">
+
+    <!-- Background Glow Effects -->
+    <div class="mesh-bg">
+        <div class="mesh-circle-1"></div>
+        <div class="mesh-circle-2"></div>
+        <div class="mesh-circle-3"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <img src="logo.png" alt="SafeWebGuard Logo" class="w-12 h-12 rounded-full object-cover shadow-lg shadow-emerald-500/25 border border-emerald-500/30">
+                    <div>
+                        <span class="text-xl font-extrabold tracking-wide text-slate-900 dark:text-white block">SafeWeb<span class="text-emerald-500 dark:text-emerald-400">Guard</span></span>
+                        <span class="text-xs text-slate-500 dark:text-gray-400 font-medium block">حارس الويب العائلي</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu Links -->
+                <div class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600 dark:text-gray-300">
+                    <a href="#features" class="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">المميزات</a>
+                    <a href="#how-it-works" class="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">كيف يحمي طفلك؟</a>
+                    <a href="#install-guide" class="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">دليل التثبيت</a>
+                    <a href="#support" class="text-amber-600 dark:text-amber-400 hover:text-amber-500 font-bold flex items-center gap-1.5 transition-colors bg-amber-500/10 px-3 py-1 rounded-lg border border-amber-500/20">
+                        <i class="fa-brands fa-google-play text-xs"></i>
+                        <span>طلب عون (متجر بلاي)</span>
+                    </a>
+                    <a href="#faq" class="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">الأسئلة الشائعة</a>
+                    <a href="#contact" class="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">تواصل معنا</a>
+                </div>
+
+                <!-- Right Action Buttons (Theme Toggle + Download) -->
+                <div class="hidden md:flex items-center gap-4">
+                    <!-- Light / Dark Mode Toggle Button -->
+                    <button class="theme-toggle-btn" title="تبديل الوضع الفاتح / الليلي" aria-label="تبديل الوضع">
+                        <i class="fa-solid fa-moon text-indigo-400 text-xs"></i>
+                        <i class="fa-solid fa-sun text-amber-500 text-xs"></i>
+                        <div class="theme-toggle-knob"></div>
+                    </button>
+
+                    <!-- APK Download CTA -->
+                    <a href="SafeWebGuard-Family.apk" download class="btn-download-apk inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-dark-900 font-bold px-6 py-2.5 rounded-xl shadow-lg shadow-emerald-500/25 transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-download text-base"></i>
+                        <span>تحميل APK مجاناً</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Header Buttons -->
+                <div class="md:hidden flex items-center gap-3">
+                    <button class="theme-toggle-btn" title="تبديل المظهر">
+                        <i class="fa-solid fa-moon text-indigo-400 text-xs"></i>
+                        <i class="fa-solid fa-sun text-amber-500 text-xs"></i>
+                        <div class="theme-toggle-knob"></div>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-slate-700 dark:text-gray-300 hover:text-emerald-500 focus:outline-none p-1.5">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 dark:bg-dark-900/95 border-b border-slate-200 dark:border-gray-800 px-6 py-5 space-y-3">
+            <a href="#features" class="block text-slate-700 dark:text-gray-300 hover:text-emerald-500 dark:hover:text-emerald-400 py-1.5 font-medium">المميزات</a>
+            <a href="#how-it-works" class="block text-slate-700 dark:text-gray-300 hover:text-emerald-500 dark:hover:text-emerald-400 py-1.5 font-medium">كيف يحمي طفلك؟</a>
+            <a href="#install-guide" class="block text-slate-700 dark:text-gray-300 hover:text-emerald-500 dark:hover:text-emerald-400 py-1.5 font-medium">دليل التثبيت</a>
+            <a href="#support" class="flex items-center gap-2 text-amber-600 dark:text-amber-400 font-bold py-1.5 bg-amber-500/10 px-3 rounded-lg">
+                <i class="fa-brands fa-google-play"></i>
+                <span>طلب عون (نشر التطبيق على متجر بلاي)</span>
+            </a>
+            <a href="#faq" class="block text-slate-700 dark:text-gray-300 hover:text-emerald-500 dark:hover:text-emerald-400 py-1.5 font-medium">الأسئلة الشائعة</a>
+            <a href="#contact" class="block text-slate-700 dark:text-gray-300 hover:text-emerald-500 dark:hover:text-emerald-400 py-1.5 font-medium">تواصل معنا</a>
+            <a href="SafeWebGuard-Family.apk" download class="btn-download-apk flex items-center justify-center gap-2 w-full bg-emerald-500 hover:bg-emerald-600 text-dark-900 font-bold py-3 rounded-xl shadow-md mt-2">
+                <i class="fa-solid fa-download"></i>
+                <span>تحميل التطبيق APK (مباشر)</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left/Main Text Column -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-right">
+                    
+                    <!-- Top Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-sm font-semibold shadow-sm">
+                        <span class="flex h-2.5 w-2.5 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                        </span>
+                        <span>الإصدار الأحدث 2026 • حماية حديدية ضد المواقع الإباحية</span>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white leading-tight">
+                        احمِ أبناءك وأهلك من
+                        <span class="text-gradient block mt-1">عواصف الإنترنت ومكاره الخلوات</span>
+                    </h1>
+
+                    <!-- Description -->
+                    <p class="text-lg sm:text-xl text-slate-600 dark:text-gray-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        تطبيق أندرويد متطور ومبتكر، يجمع بين <span class="text-emerald-600 dark:text-emerald-400 font-semibold">الدرع التقني الصارم</span> و<span class="text-cyan-600 dark:text-cyan-400 font-semibold">التذكير الإيماني</span>. يغلق فوراً أي نافذة بحث محرمة بدقة جراحية، ويمنع التعطيل عبر VPN مشفر محمي برمز PIN للأبوين.
+                    </p>
+
+                    <!-- Quranic Verses Banner Card (Contains all 3 verses together) -->
+                    <div class="glass-panel p-5 sm:p-6 rounded-2xl border-amber-500/30 bg-amber-500/5 dark:bg-amber-950/20 relative overflow-hidden space-y-3.5">
+                        <div class="flex items-center gap-3 border-b border-amber-500/20 pb-2">
+                            <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-quran text-sm"></i>
+                            </div>
+                            <span class="text-xs font-bold text-amber-700 dark:text-amber-300 tracking-wide">آيات بينات لتزكية النفوس ومراقبة الله في الخلوات</span>
+                        </div>
+                        
+                        <div class="space-y-3 text-right">
+                            <!-- Verse 1 -->
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-bookmark text-amber-500 text-xs mt-2 shrink-0"></i>
+                                <p class="quran-font text-lg sm:text-xl text-amber-900 dark:text-amber-200 leading-relaxed font-bold">
+                                    ﴿ قُلْ أَذَٰلِكَ خَيْرٌ أَمْ جَنَّةُ الْخُلْدِ الَّتِي وُعِدَ الْمُتَّقُونَ ﴾
+                                </p>
+                            </div>
+
+                            <!-- Verse 2 -->
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-bookmark text-cyan-500 text-xs mt-2 shrink-0"></i>
+                                <p class="quran-font text-lg sm:text-xl text-cyan-800 dark:text-cyan-300 leading-relaxed font-bold">
+                                    ﴿ أَلَمْ يَعْلَم بِأَنَّ اللَّهَ يَرَىٰ ﴾
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="SafeWebGuard-Family.apk" download class="btn-download-apk w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-dark-900 font-extrabold text-lg px-8 py-4 rounded-2xl shadow-xl shadow-emerald-500/30 transition-all transform hover:-translate-y-1">
+                            <i class="fa-solid fa-cloud-arrow-down text-2xl"></i>
+                            <div class="text-right">
+                                <div class="text-base leading-none">تحميل التطبيق الآن</div>
+                                <div class="text-xs opacity-80 mt-1 font-semibold">ملف APK مباشر • 7.0 ميجابايت • مجاني</div>
+                            </div>
+                        </a>
+
+                        <a href="#install-guide" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 glass-panel hover:bg-slate-200/60 dark:hover:bg-dark-700/60 text-slate-700 dark:text-gray-200 font-bold px-6 py-4 rounded-2xl border border-slate-300 dark:border-gray-700 transition-all">
+                            <i class="fa-solid fa-circle-play text-emerald-500 dark:text-emerald-400 text-lg"></i>
+                            <span>طريقة التثبيت السريعة</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust indicators -->
+                    <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-500 dark:text-gray-400">
+                        <span class="flex items-center gap-2 font-medium">
+                            <i class="fa-solid fa-circle-check text-emerald-500"></i> مجاني 100% لوجه الله
+                        </span>
+                        <span class="flex items-center gap-2 font-medium">
+                            <i class="fa-solid fa-ban text-emerald-500"></i> بدون أي إعلانات
+                        </span>
+                        <span class="flex items-center gap-2 font-medium">
+                            <i class="fa-solid fa-shield-cat text-cyan-500"></i> حماية ضد الحذف بـ PIN
+                        </span>
+                        <span class="flex items-center gap-2 font-medium">
+                            <i class="fa-solid fa-bolt text-amber-500"></i> لا يؤثر على سرعة الإنترنت
+                        </span>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Interactive Realistic App Mockup with Polished Toggles -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-[340px]">
+                        
+                        <!-- Glowing backdrop circle -->
+                        <div class="absolute -inset-4 bg-gradient-to-tr from-emerald-500/20 to-cyan-500/20 rounded-[50px] blur-2xl opacity-70"></div>
+                        
+                        <!-- The Android Phone Body (Samsung Galaxy / Pixel Style) -->
+                        <div class="android-phone animate-float relative z-10 w-full text-right shadow-2xl">
+                            
+                            <!-- Android Status Bar -->
+                            <div class="flex items-center justify-between px-4 pt-2 pb-1.5 bg-slate-950 text-gray-300 select-none border-b border-slate-900/60">
+                                <!-- Left: Clock & Android VPN Key Icon -->
+                                <div class="flex items-center gap-1.5 font-bold tracking-tight text-[11px]">
+                                    <span class="font-sans">10:45</span>
+                                    <i class="fa-solid fa-key text-[10px] text-emerald-400" title="درع الـ VPN نشط"></i>
+                                </div>
+
+                                <!-- Center: Android Punch-Hole Camera -->
+                                <div class="android-camera-punch" title="الكاميرا الأمامية"></div>
+
+                                <!-- Right: Android 5G, Wi-Fi, Battery -->
+                                <div class="flex items-center gap-2 text-[10px]">
+                                    <span class="text-[9px] font-extrabold text-gray-400">5G</span>
+                                    <i class="fa-solid fa-wifi text-[9px]"></i>
+                                    <div class="flex items-center gap-0.5">
+                                        <span class="text-[9px] font-sans">98%</span>
+                                        <i class="fa-solid fa-battery-full text-xs text-emerald-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Android Phone Screen Content -->
+                            <div class="p-4 space-y-3.5 bg-slate-950 text-white min-h-[560px] flex flex-col justify-between">
+                                
+                                <!-- App Header Inside Phone -->
+                                <div>
+                                    <div class="flex items-center justify-between pb-3 border-b border-slate-800/90">
+                                        <div class="flex items-center gap-2">
+                                            <img src="logo.png" alt="SafeWebGuard Icon" class="w-7 h-7 rounded-full object-cover border border-emerald-500/30">
+                                            <span class="text-xs font-bold text-gray-200">حارس الويب العائلي</span>
+                                        </div>
+                                        <span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full font-bold">نشط وآمن 🟢</span>
+                                    </div>
+
+                                    <!-- Main Status Card -->
+                                    <div class="mt-3.5 p-4 rounded-2xl bg-gradient-to-br from-emerald-950/80 to-slate-900 border border-emerald-500/30 text-center space-y-2">
+                                        <img src="logo.png" alt="SafeWebGuard Status" class="w-14 h-14 mx-auto rounded-full object-cover shadow-lg shadow-emerald-500/30 border border-emerald-500/40">
+                                        <div class="text-sm font-extrabold text-white">الدرع العائلي قيد التشغيل</div>
+                                        <div class="text-[11px] text-gray-300">يتم فحص المتصفحات وحجب أي محتوى ضار لحظياً</div>
+                                    </div>
+
+                                    <!-- Quranic Card inside App -->
+                                    <div class="mt-3 p-3 rounded-xl bg-slate-900 border border-amber-500/20 text-center space-y-1">
+                                        <p class="quran-font text-xs text-amber-200 leading-relaxed font-bold">
+                                            ﴿ أَلَمْ يَعْلَم بِأَنَّ اللَّهَ يَرَىٰ ﴾
+                                        </p>
+                                        <p class="quran-font text-[11px] text-emerald-300">
+                                            ﴿ وَقِهِمُ السَّيِّئَاتِ ۚ وَمَن تَقِ السَّيِّئَاتِ يَوْمَئِذٍ فَقَدْ رَحِمْتَهُ ﴾
+                                        </p>
+                                    </div>
+
+                                    <!-- Robust Fixed Feature Toggles inside Mockup -->
+                                    <div class="mt-3 space-y-2.5 text-xs">
+                                        <!-- Toggle 1: DNS -->
+                                        <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition-colors">
+                                            <div class="flex items-center gap-2">
+                                                <i class="fa-solid fa-globe text-cyan-400 text-sm"></i>
+                                                <span class="text-[11px] font-semibold text-gray-200">خوادم DNS العائلية</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <span class="switch-status text-[10px] text-emerald-400 font-bold bg-emerald-500/10 px-1.5 py-0.5 rounded">مفعل</span>
+                                                <div class="mockup-switch active" title="انقر للتشغيل/التعطيل">
+                                                    <div class="mockup-switch-knob"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Toggle 2: Surgical Tab Closure -->
+                                        <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition-colors">
+                                            <div class="flex items-center gap-2">
+                                                <i class="fa-solid fa-window-close text-rose-400 text-sm"></i>
+                                                <span class="text-[11px] font-semibold text-gray-200">إغلاق التبويب الضار</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <span class="switch-status text-[10px] text-emerald-400 font-bold bg-emerald-500/10 px-1.5 py-0.5 rounded">مفعل</span>
+                                                <div class="mockup-switch active" title="انقر للتشغيل/التعطيل">
+                                                    <div class="mockup-switch-knob"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Toggle 3: PIN Protection -->
+                                        <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition-colors">
+                                            <div class="flex items-center gap-2">
+                                                <i class="fa-solid fa-key text-amber-400 text-sm"></i>
+                                                <span class="text-[11px] font-semibold text-gray-200">قفل الـ PIN ضد الإيقاف</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <span class="switch-status text-[10px] text-emerald-400 font-bold bg-emerald-500/10 px-1.5 py-0.5 rounded">مفعل</span>
+                                                <div class="mockup-switch active" title="انقر للتشغيل/التعطيل">
+                                                    <div class="mockup-switch-knob"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- App Footer inside Phone -->
+                                <div class="pt-2.5 border-t border-slate-800/80 text-center space-y-1.5">
+                                    <p class="text-[11px] text-amber-300 font-medium">دعوة بظهر الغيب: لا تنساني من صالح دعائك</p>
+                                    <div class="flex items-center justify-center">
+                                        <span class="text-[10px] bg-emerald-600/30 text-emerald-300 px-3 py-0.5 rounded-lg">تواصل واتساب متاح دائماً</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Android Navigation Bar (3 Buttons: Recents, Home, Back) -->
+                            <div class="android-nav-bar">
+                                <span class="android-nav-btn" title="التطبيقات المفتوحة"><i class="fa-solid fa-bars text-xs"></i></span>
+                                <span class="android-nav-btn" title="الرئيسية"><i class="fa-regular fa-circle text-xs"></i></span>
+                                <span class="android-nav-btn" title="رجوع"><i class="fa-solid fa-chevron-left text-xs"></i></span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Spiritual / Islamic Motivation Section -->
+    <section class="py-16 relative bg-slate-100/70 dark:bg-slate-950/70 border-y border-slate-200 dark:border-gray-800/60 transition-colors">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-500 dark:text-amber-400 text-2xl border border-amber-500/20 mb-2">
+                <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+                لماذا صنعنا هذا التطبيق؟ <span class="text-gradient">صيانة للبيوت وحفظاً للأمانة</span>
+            </h2>
+
+            <div class="glass-panel p-8 sm:p-10 rounded-3xl border-slate-200 dark:border-gray-800 relative max-w-4xl mx-auto shadow-xl space-y-6">
+                <!-- Golden Decorated Verse Card -->
+                <div class="p-6 rounded-2xl bg-gradient-to-r from-emerald-500/10 via-amber-500/10 to-cyan-500/10 border border-emerald-500/30 text-center relative overflow-hidden shadow-inner">
+                    <div class="w-10 h-10 mx-auto mb-2.5 rounded-xl bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg shadow-sm">
+                        <i class="fa-solid fa-quran"></i>
+                    </div>
+                    <p class="quran-font text-2xl sm:text-3xl text-emerald-900 dark:text-emerald-300 font-bold leading-relaxed">
+                        ﴿ وَقِهِمُ السَّيِّئَاتِ ۚ وَمَن تَقِ السَّيِّئَاتِ يَوْمَئِذٍ فَقَدْ رَحِمْتَهُ ۚ وَذَٰلِكَ هُوَ الْفَوْزُ الْعَظِيمُ ﴾
+                    </p>
+                    <span class="text-xs text-slate-500 dark:text-gray-400 mt-2 block font-medium">[ سورة غافر: 9 ]</span>
+                </div>
+
+                <p class="text-slate-600 dark:text-gray-300 text-base sm:text-lg leading-relaxed text-right">
+                    «إن أعظم ما يبتلى به المسلم في هذا العصر هو سهولة الوصول إلى الفواحش في شاشات الجيب في أوقات الخلوة. وقد حذر النبي ﷺ من ذنوب الخلوات التي تُذهب الحسنات هباءً. ولأن أطفالنا وشبابنا أمانة في أعناقنا، كان هذا التطبيق ليكون <strong>سداً منيعاً وعوناً للوالد والمربي</strong> على صيانة البيت والقلوب، ابتغاء مرضاة الله ورجاء الأجر.»
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exclusive Features Section -->
+    <section id="features" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center space-y-4 max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">مميزات حصرية لا تجدها في تطبيق آخر</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+                    حلول ذكية وجذرية صُممت خصيصاً لحماية طفلك 100%
+                </h3>
+                <p class="text-slate-600 dark:text-gray-400 text-base">
+                    تمت برمجة التطبيق بعناية فائقة لتجاوز جميع الثغرات وحيل الأطفال في محاولة تخطي برامج الحجب.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Feature 1 -->
+                <div class="glass-panel p-8 rounded-3xl border-slate-200 dark:border-gray-800 hover:border-emerald-500/50 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 flex items-center justify-center text-2xl group-hover:bg-emerald-500 group-hover:text-dark-900 transition-all mb-6">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-3">إغلاق جراحي للصفحة الضارة فقط</h4>
+                    <p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">
+                        إذا كان طفلك يذاكر أو يتصفح مواقع نافعة وبحث عن شيء غير لائق، يتدخل التطبيق فوراً ويغلق <strong>تلك الصفحة الضارة فقط</strong>، ولا يغلق باقي النوافذ المفتوحة أو بحثه المفيد.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass-panel p-8 rounded-3xl border-slate-200 dark:border-gray-800 hover:border-cyan-500/50 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 text-cyan-500 dark:text-cyan-400 flex items-center justify-center text-2xl group-hover:bg-cyan-500 group-hover:text-dark-900 transition-all mb-6">
+                        <i class="fa-solid fa-shield-virus"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-3">درع VPN حديدي مانع للإيقاف</h4>
+                    <p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">
+                        إذا حاول الطفل سحب شريط الإشعارات والضغط على "قطع الاتصال" (Disconnect) أو الدخول لإعدادات الهاتف لإلغاء الـ VPN، يعيد التطبيق تشغيله فورياً في ثوانٍ معدودة ويقفل الشاشة برمز PIN.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass-panel p-8 rounded-3xl border-slate-200 dark:border-gray-800 hover:border-amber-500/50 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-500 dark:text-amber-400 flex items-center justify-center text-2xl group-hover:bg-amber-500 group-hover:text-dark-900 transition-all mb-6">
+                        <i class="fa-brands fa-google-play"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-3">اكتشاف فوري لأي متصفح جديد</h4>
+                    <p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">
+                        لو قام الطفل بتحميل أي متصفح جديد تماماً من متجر Google Play (مثل Firefox, Opera, Brave, DuckDuckGo)، يتعرف التطبيق عليه تلقائياً وفورياً ويبدأ بحمايته فوراً.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="glass-panel p-8 rounded-3xl border-slate-200 dark:border-gray-800 hover:border-emerald-500/50 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 flex items-center justify-center text-2xl group-hover:bg-emerald-500 group-hover:text-dark-900 transition-all mb-6">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-3">حجب مزدوج: شبكي + محلي</h4>
+                    <p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">
+                        حماية متكاملة عبر خوادم OpenDNS FamilyShield العائلية لحجب المواقع الإباحية من مزود الإنترنت + محرك فحص كلمات البحث المحلي على مستوى النظام لحجب النتائج غير اللائقة لحظياً.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="glass-panel p-8 rounded-3xl border-slate-200 dark:border-gray-800 hover:border-purple-500/50 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-500 dark:text-purple-400 flex items-center justify-center text-2xl group-hover:bg-purple-500 group-hover:text-dark-900 transition-all mb-6">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-3">قفل الوالدين برمز PIN سري</h4>
+                    <p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">
+                        لا يمكن إلغاء الحماية أو الدخول للإعدادات أو محاولة إلغاء التثبيت دون إدخال رمز الأمان السري (PIN) الخاص بالأب أو الأم، مع دعم صلاحية مسؤول الجهاز (Device Admin).
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="glass-panel p-8 rounded-3xl border-slate-200 dark:border-gray-800 hover:border-rose-500/50 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-2xl bg-rose-500/10 text-rose-500 dark:text-rose-400 flex items-center justify-center text-2xl group-hover:bg-rose-500 group-hover:text-dark-900 transition-all mb-6">
+                        <i class="fa-solid fa-feather-pointed"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-3">خفيف للغاية وصفر إعلانات</h4>
+                    <p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">
+                        حجم التطبيق 7 ميجابايت فقط، لا يستهلك طاقة البطارية، ولا يبطئ الهاتف أو الإنترنت مطلقاً، وخالٍ تماماً من الإعلانات المزعجة لوجه الله الكريم.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section id="how-it-works" class="py-20 bg-slate-100/60 dark:bg-slate-950/70 border-t border-slate-200 dark:border-gray-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center space-y-4 max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">آلية العمل الذكية</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">كيف يعمل التطبيق في الخلفية كحارس صامت؟</h3>
+                <p class="text-slate-600 dark:text-gray-400 text-base">4 خطوات متكاملة تضمن حماية أطفالك على مدار الساعة دون إزعاجهم</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                
+                <div class="glass-panel p-6 rounded-2xl relative text-center space-y-3 border-slate-200 dark:border-gray-800">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500 text-dark-900 font-extrabold text-xl flex items-center justify-center mx-auto shadow-lg shadow-emerald-500/30">1</div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white">تثبيت التطبيق</h4>
+                    <p class="text-slate-600 dark:text-gray-400 text-xs leading-relaxed">تحميل ملف الـ APK وتثبيته على جهاز طفلك وتعيين رمز الـ PIN الخاص بك.</p>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl relative text-center space-y-3 border-slate-200 dark:border-gray-800">
+                    <div class="w-12 h-12 rounded-full bg-cyan-500 text-dark-900 font-extrabold text-xl flex items-center justify-center mx-auto shadow-lg shadow-cyan-500/30">2</div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white">تفعيل إمكانية الوصول</h4>
+                    <p class="text-slate-600 dark:text-gray-400 text-xs leading-relaxed">السماح لخدمة الحماية بفحص الكلمات الدلالية وإغلاق التبويبات المخالفة فوراً.</p>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl relative text-center space-y-3 border-slate-200 dark:border-gray-800">
+                    <div class="w-12 h-12 rounded-full bg-purple-500 text-dark-900 font-extrabold text-xl flex items-center justify-center mx-auto shadow-lg shadow-purple-500/30">3</div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white">تشغيل درع الـ VPN</h4>
+                    <p class="text-slate-600 dark:text-gray-400 text-xs leading-relaxed">تشفير اتصالات الـ DNS بالكامل عبر خوادم الحماية العائلية على مستوى الشبكة.</p>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl relative text-center space-y-3 border-slate-200 dark:border-gray-800">
+                    <div class="w-12 h-12 rounded-full bg-amber-500 text-dark-900 font-extrabold text-xl flex items-center justify-center mx-auto shadow-lg shadow-amber-500/30">4</div>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white">حماية تلقائية 24/7</h4>
+                    <p class="text-slate-600 dark:text-gray-400 text-xs leading-relaxed">يعمل التطبيق كحارس غير مرئي لا يمكن إيقافه، ويمنحك راحة البال التامة.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Installation Guide Section -->
+    <section id="install-guide" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center space-y-4 max-w-3xl mx-auto mb-16">
+                <span class="inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold border border-emerald-500/20">سهل وسريع جداً</span>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">خطوات التثبيت والتفعيل في دقيقتين فقط</h3>
+                <p class="text-slate-600 dark:text-gray-400 text-base">اتبع الخطوات البسيطة التالية على هاتف أو تابلت طفلك لتفعيل الحماية الحديدية</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Step 1 -->
+                <div class="glass-panel p-8 rounded-3xl border-slate-200 dark:border-gray-800 space-y-4 relative overflow-hidden">
+                    <div class="text-6xl font-black text-slate-200 dark:text-gray-800/40 absolute top-4 left-6">01</div>
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-file-arrow-down"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 dark:text-white">التحميل والتثبيت</h4>
+                    <ul class="text-slate-600 dark:text-gray-300 text-sm space-y-2 leading-relaxed">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
+                            <span>اضغط على زر <strong>تحميل التطبيق (APK)</strong> واحفظ الملف على جهاز الطفل.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
+                            <span>افتح الملف واضغط <strong>تثبيت (Install)</strong>، وإذا طلب الإذن اسمح بالتثبيت من هذا المصدر.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="glass-panel p-8 rounded-3xl border-slate-200 dark:border-gray-800 space-y-4 relative overflow-hidden">
+                    <div class="text-6xl font-black text-slate-200 dark:text-gray-800/40 absolute top-4 left-6">02</div>
+                    <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-500 dark:text-cyan-400 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-fingerprint"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 dark:text-white">تعيين رمز PIN الوالدين</h4>
+                    <ul class="text-slate-600 dark:text-gray-300 text-sm space-y-2 leading-relaxed">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 mt-1"></i>
+                            <span>افتح التطبيق وقم بتعيين رمز سري من 4 إلى 6 أرقام لا يعرفه طفلك.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-cyan-500 mt-1"></i>
+                            <span>هذا الرمز هو مفتاحك الوحيد لتعديل الإعدادات أو إيقاف الحماية مؤقتاً.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="glass-panel p-8 rounded-3xl border-slate-200 dark:border-gray-800 space-y-4 relative overflow-hidden">
+                    <div class="text-6xl font-black text-slate-200 dark:text-gray-800/40 absolute top-4 left-6">03</div>
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 dark:text-amber-400 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-toggle-on"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 dark:text-white">تفعيل الحماية والـ VPN</h4>
+                    <ul class="text-slate-600 dark:text-gray-300 text-sm space-y-2 leading-relaxed">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-amber-500 mt-1"></i>
+                            <span>فعل خيار <strong>خدمة إمكانية الوصول (Accessibility Service)</strong> باسم SafeWeb Guard.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-amber-500 mt-1"></i>
+                            <span>وافق على طلب اتصال الـ VPN العائلي، ومبارك! جهاز طفلك أصبح محصناً بالكامل.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Download Banner Box -->
+            <div class="mt-12 glass-panel p-8 sm:p-10 rounded-3xl border-emerald-500/30 bg-gradient-to-r from-emerald-500/10 via-slate-100 to-cyan-500/10 dark:from-emerald-950/40 dark:via-dark-800 dark:to-cyan-950/40 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="space-y-2 text-center md:text-right">
+                    <h4 class="text-2xl font-extrabold text-slate-900 dark:text-white">هل أنت مستعد لتأمين أجهزة عائلتك الآن؟</h4>
+                    <p class="text-slate-600 dark:text-gray-400 text-sm">التطبيق متاح للتحميل الفوري مجاناً بدون أي اشتراك أو تسجيل دخول.</p>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <a href="SafeWebGuard-Family.apk" download class="btn-download-apk inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-dark-900 font-extrabold px-8 py-4 rounded-2xl shadow-xl shadow-emerald-500/25 transition-all transform hover:-translate-y-1">
+                        <i class="fa-solid fa-download text-xl"></i>
+                        <span>تحميل النسخة المحدثة (APK)</span>
+                    </a>
+                    <button onclick="copyWebsiteLink()" class="inline-flex items-center gap-2 glass-panel hover:bg-slate-200 dark:hover:bg-dark-700 text-slate-700 dark:text-gray-200 font-bold px-5 py-4 rounded-2xl border border-slate-300 dark:border-gray-700 transition-all">
+                        <i class="fa-solid fa-share-nodes text-emerald-500 text-lg"></i>
+                        <span>مشاركة الموقع مع صديق</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ Section - Completely Fixed Show/Hide -->
+    <section id="faq" class="py-20 bg-slate-100/60 dark:bg-slate-950/80 border-t border-slate-200 dark:border-gray-800 transition-colors">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">إجابات على كل استفساراتك</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">الأسئلة الشائعة</h3>
+                <p class="text-slate-500 dark:text-gray-400 text-sm">انقر على أي سؤال لعرض إجابته التفصيلية</p>
+            </div>
+
+            <div class="space-y-4">
+                
+                <!-- Q1 -->
+                <div class="faq-item glass-panel rounded-2xl border border-slate-200 dark:border-gray-800 overflow-hidden transition-all duration-300">
+                    <button type="button" class="faq-header w-full p-6 flex items-center justify-between text-right cursor-pointer select-none">
+                        <span class="font-bold text-slate-900 dark:text-white text-base sm:text-lg">هل يستطيع الطفل إلغاء تثبيت التطبيق أو إيقافه؟</span>
+                        <div class="w-8 h-8 rounded-full bg-slate-200/70 dark:bg-slate-800 flex items-center justify-center text-emerald-600 dark:text-emerald-400 transition-colors shrink-0 mr-4">
+                            <i class="fa-solid fa-plus faq-icon text-sm transition-transform duration-200"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-600 dark:text-gray-400 text-sm leading-relaxed border-t border-slate-200 dark:border-gray-800/80 pt-4">
+                        لا، التطبيق محمي برمز PIN سري خاص بالأبوين. وإذا حاول الطفل إلغاء التثبيت أو الدخول لإعدادات التطبيق أو سحب شريط الإشعارات لقطع الـ VPN، يقوم التطبيق بإغلاق النافذة فوراً وإظهار شاشة قفل الـ PIN لحماية الإعدادات.
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="faq-item glass-panel rounded-2xl border border-slate-200 dark:border-gray-800 overflow-hidden transition-all duration-300">
+                    <button type="button" class="faq-header w-full p-6 flex items-center justify-between text-right cursor-pointer select-none">
+                        <span class="font-bold text-slate-900 dark:text-white text-base sm:text-lg">ماذا لو قام الطفل بتحميل متصفح جديد مثل Firefox أو Opera من المتجر؟</span>
+                        <div class="w-8 h-8 rounded-full bg-slate-200/70 dark:bg-slate-800 flex items-center justify-center text-emerald-600 dark:text-emerald-400 transition-colors shrink-0 mr-4">
+                            <i class="fa-solid fa-plus faq-icon text-sm transition-transform duration-200"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-600 dark:text-gray-400 text-sm leading-relaxed border-t border-slate-200 dark:border-gray-800/80 pt-4">
+                        يحتوي التطبيق على نظام فحص ذكي يتعرف تلقائياً على أي متصفح جديد بمجرد اكتمال تنزيله من Google Play، ويبدأ في حمايته وإغلاق صفحاته الضارة فوراً دون أي إعداد يدوي.
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="faq-item glass-panel rounded-2xl border border-slate-200 dark:border-gray-800 overflow-hidden transition-all duration-300">
+                    <button type="button" class="faq-header w-full p-6 flex items-center justify-between text-right cursor-pointer select-none">
+                        <span class="font-bold text-slate-900 dark:text-white text-base sm:text-lg">هل يغلق التطبيق صفحات المذاكرة أو البحث المفيد الأخرى؟</span>
+                        <div class="w-8 h-8 rounded-full bg-slate-200/70 dark:bg-slate-800 flex items-center justify-center text-emerald-600 dark:text-emerald-400 transition-colors shrink-0 mr-4">
+                            <i class="fa-solid fa-plus faq-icon text-sm transition-transform duration-200"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-600 dark:text-gray-400 text-sm leading-relaxed border-t border-slate-200 dark:border-gray-800/80 pt-4">
+                        إطلاقاً! التطبيق مزود بخوارزمية إغلاق جراحية دقيقة، بحيث يستهدف فقط التبويب الذي تم البحث فيه عن الكلمة أو المحتوى الخبيث ويغلقه عند الضغط على الذهاب، محافظاً على جميع التبويبات الأخرى وأعمال الطفل المدرسية دون أي مساس بها.
+                    </div>
+                </div>
+
+                <!-- Q4: Comparison with Google services & Social Media protection -->
+                <div class="faq-item glass-panel rounded-2xl border border-slate-200 dark:border-gray-800 overflow-hidden transition-all duration-300">
+                    <button type="button" class="faq-header w-full p-6 flex items-center justify-between text-right cursor-pointer select-none">
+                        <span class="font-bold text-slate-900 dark:text-white text-base sm:text-lg">ما الذي يميز SafeWebGuard عن خدمات الرقابة من جوجل (مثل Family Link والبحث الآمن)؟</span>
+                        <div class="w-8 h-8 rounded-full bg-slate-200/70 dark:bg-slate-800 flex items-center justify-center text-emerald-600 dark:text-emerald-400 transition-colors shrink-0 mr-4">
+                            <i class="fa-solid fa-plus faq-icon text-sm transition-transform duration-200"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-600 dark:text-gray-400 text-sm leading-relaxed border-t border-slate-200 dark:border-gray-800/80 pt-4 space-y-3">
+                        <p>يتميز <strong>SafeWebGuard</strong> بعدة فوارق جوهرية وحاسمة تجعله سداً حقيقياً لا يمكن الالتفاف عليه، بخلاف خدمات جوجل التقليدية:</p>
+
+                        <div class="space-y-2.5 text-xs">
+                            <div class="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-gray-800/80">
+                                <i class="fa-solid fa-share-nodes text-cyan-500 mt-0.5 shrink-0 text-sm"></i>
+                                <div>
+                                    <strong class="text-slate-900 dark:text-white block mb-0.5">1. حظر المحتوى الضار القادم من السوشيال ميديا:</strong>
+                                    أغلب المواد الإباحية حالياً لا تأتي من محرك بحث جوجل، بل تتسرب عبر روابط تطبيقات التواصل الاجتماعي (مثل فيسبوك، إكس/تويتر، ريديت، تليجرام، تيك توك، والمتصفحات المدمجة In-App Browsers). خدمات جوجل لا تعترض هذه الروابط، بينما <strong>SafeWebGuard</strong> يحمي اتصال الهاتف بالكامل على مستوى الشبكة فيمنع أي رابط أو موقع إباحي حتى لو فُتح من داخل أي تطبيق سوشيال ميديا!
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-gray-800/80">
+                                <i class="fa-solid fa-user-slash text-rose-500 mt-0.5 shrink-0 text-sm"></i>
+                                <div>
+                                    <strong class="text-slate-900 dark:text-white block mb-0.5">2. مناعة ضد حيل الالتفاف وتبديل الحسابات:</strong>
+                                    في خدمات جوجل، بمجرد أن يسجل الطفل الخروج من الحساب، أو يفتح وضع التصفح الخفي (Incognito)، أو يُنشئ حساب Gmail بديل، أو يبلغ سن 13 عاماً (حيث تتيح له جوجل فك الارتباط)، تسقط الحماية فوراً! أما في <strong>SafeWebGuard</strong>، فالحماية مفروضة على مستوى الهاتف ككل ومحمية برمز PIN لا يعرفه إلا الوالدان.
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-gray-800/80">
+                                <i class="fa-solid fa-bolt text-amber-500 mt-0.5 shrink-0 text-sm"></i>
+                                <div>
+                                    <strong class="text-slate-900 dark:text-white block mb-0.5">3. درع الإعادة القسرية ضد الإيقاف (Watchdog):</strong>
+                                    تطبيقات الرقابة العادية يسهل على المراهقين إيقافها من إعدادات أندرويد أو شريط الإشعارات؛ بينما تطبيقنا يراقب نفسه كل 1.5 ثانية ويعيد تشغيل درع الـ VPN قسرياً في لحظات ويقفل الشاشة برمز PIN عند أي محاولة تلاعب.
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-gray-800/80">
+                                <i class="fa-solid fa-heart-pulse text-emerald-500 mt-0.5 shrink-0 text-sm"></i>
+                                <div>
+                                    <strong class="text-slate-900 dark:text-white block mb-0.5">4. بناء الوازع الإيماني والخصوصية التامة:</strong>
+                                    خدمات الشركات الكبرى حلول تقنية تجمع بيانات التصفح، بينما <strong>SafeWebGuard</strong> مجاني لوجه الله 100% ولا يتتبع أي بيانات، ويرسخ مراقبة الله في الخلوات ليكون رادعاً للقلب قبل الشاشة.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="faq-item glass-panel rounded-2xl border border-slate-200 dark:border-gray-800 overflow-hidden transition-all duration-300">
+                    <button type="button" class="faq-header w-full p-6 flex items-center justify-between text-right cursor-pointer select-none">
+                        <span class="font-bold text-slate-900 dark:text-white text-base sm:text-lg">هل ينفع التطبيق للشباب الأكبر سناً والبالغين للتعافي وترك ذنوب الخلوات؟</span>
+                        <div class="w-8 h-8 rounded-full bg-slate-200/70 dark:bg-slate-800 flex items-center justify-center text-emerald-600 dark:text-emerald-400 transition-colors shrink-0 mr-4">
+                            <i class="fa-solid fa-plus faq-icon text-sm transition-transform duration-200"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-600 dark:text-gray-400 text-sm leading-relaxed border-t border-slate-200 dark:border-gray-800/80 pt-4 space-y-3">
+                        <p><strong>نعم بكل تأكيد، بل هو من أعظم الوسائل المعينة لهم!</strong></p>
+                        <p>التطبيق ليس مخصصاً للأطفال الصغار فحسب، بل صُمم ليكون سداً منيعاً وحصناً لكل شاب أو رجل يجاهد نفسه ويرغب في العفة الصادقة والتعافي النهائي من مستنقع الإباحية وترك ذنوب الخلوات.</p>
+                        
+                        <!-- Verse & Hadith Card -->
+                        <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 text-center space-y-1.5">
+                            <p class="quran-font text-base sm:text-lg text-amber-900 dark:text-amber-200 font-bold leading-relaxed">
+                                ﴿ وَلْيَسْتَعْفِفِ الَّذِينَ لَا يَجِدُونَ نِكَاحًا حَتَّىٰ يُغْنِيَهُمُ اللَّهُ مِن فَضْلِهِ ﴾
+                            </p>
+                            <p class="text-xs text-emerald-700 dark:text-emerald-300 font-semibold">
+                                وقال رسول الله ﷺ: «وَمَن يَسْتَعْفِفْ يُعِفَّهُ اللَّهُ، وَمَن يَسْتَغْنِ يُغْنِهِ اللَّهُ»
+                            </p>
+                        </div>
+
+                        <div class="text-xs bg-emerald-500/10 p-3.5 rounded-xl border border-emerald-500/20 text-emerald-800 dark:text-emerald-300 leading-relaxed">
+                            <strong>💡 طريقة ذكية للشباب:</strong> يمكنك تثبيت التطبيق وتفعيل درع الـ VPN، ثم تطلب من صديق صالح أو أخ موثوق تعيين رمز الـ PIN لك، أو كتابة رمز عشوائي لا تحفظه، وبذلك تغلق على نفسك منافذ الشيطان تماماً في أوقات الضعف والفتنة حتى يعينك الله وتكتمل عفتك.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="faq-item glass-panel rounded-2xl border border-slate-200 dark:border-gray-800 overflow-hidden transition-all duration-300">
+                    <button type="button" class="faq-header w-full p-6 flex items-center justify-between text-right cursor-pointer select-none">
+                        <span class="font-bold text-slate-900 dark:text-white text-base sm:text-lg">هل التطبيق مجاني؟ وهل يحتوي على أي إعلانات؟</span>
+                        <div class="w-8 h-8 rounded-full bg-slate-200/70 dark:bg-slate-800 flex items-center justify-center text-emerald-600 dark:text-emerald-400 transition-colors shrink-0 mr-4">
+                            <i class="fa-solid fa-plus faq-icon text-sm transition-transform duration-200"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-600 dark:text-gray-400 text-sm leading-relaxed border-t border-slate-200 dark:border-gray-800/80 pt-4">
+                        نعم، التطبيق مجاني 100% لوجه الله تعالى طلباً للثواب والأجر وحماية بيوت المسلمين، ولا يحتوي على أي إعلانات تجارية إطلاقاً.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Google Play & Windows Support Section (طلب عون لنشر التطبيق والصدقة نور) -->
+    <section id="support" class="py-24 relative bg-slate-100/70 dark:bg-slate-950/80 border-t border-slate-200 dark:border-gray-800 transition-colors">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center space-y-4 max-w-3xl mx-auto mb-16">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-bold border border-amber-500/20">
+                    <i class="fa-solid fa-hand-holding-heart text-sm"></i>
+                    <span>طلب عون ومساهمة • الصدقة نور لصاحبها</span>
+                </span>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+                    معاً لنشر الحصن الرقمي على <span class="text-gradient">أندرويد و Windows</span>
+                </h3>
+                <p class="text-slate-600 dark:text-gray-400 text-base leading-relaxed">
+                    التطبيق مجاني 100% لوجه الله تعالى دون أي إعلانات أو مقابل مادي. نحتاج فقط إلى جمع مبالغ رمزية يسيرة جداً (25$ لمتجر بلاي و 5$ لنسخة الويندوز). <strong>يمكنك المساهمة بأي مبلغ تجود به نفسك</strong>، فالمقصد هو التعاون على البر والتقوى وإيصال الحماية لكل بيت مسلم.
+                </p>
+            </div>
+
+            <!-- Two Noble Goals Grid (Android $25 & Windows $5) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                
+                <!-- Goal 1: Android Google Play ($25) -->
+                <div class="glass-panel p-8 sm:p-10 rounded-3xl border-amber-500/40 bg-gradient-to-b from-amber-500/5 via-white dark:via-dark-800 to-amber-500/10 relative overflow-hidden flex flex-col justify-between space-y-6 shadow-xl">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="w-14 h-14 rounded-2xl bg-amber-500/20 text-amber-500 flex items-center justify-center text-3xl font-bold">
+                                <i class="fa-brands fa-google-play"></i>
+                            </div>
+                            <span class="text-xs bg-amber-500/20 text-amber-700 dark:text-amber-300 px-3 py-1 rounded-full font-extrabold">هدف متجر أندرويد الرسمي</span>
+                        </div>
+
+                        <div>
+                            <h4 class="text-2xl font-black text-slate-900 dark:text-white">نشر التطبيق على Google Play</h4>
+                            <p class="text-xs text-slate-500 dark:text-gray-400 mt-1">فتح حساب مطور رسمي لرفع التطبيق لجميع الآباء والأمهات</p>
+                        </div>
+
+                        <div class="py-2 bg-amber-500/10 dark:bg-amber-500/5 p-4 rounded-2xl border border-amber-500/20 space-y-1">
+                            <div class="text-xs font-bold text-amber-700 dark:text-amber-400">إجمالي المبلغ المطلوب جمعه:</div>
+                            <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white flex items-baseline gap-2">
+                                <span class="text-emerald-600 dark:text-emerald-400">25$</span>
+                                <span class="text-sm font-bold text-slate-600 dark:text-gray-300">فقط للمشروع ككل</span>
+                            </div>
+                            <p class="text-xs text-amber-700 dark:text-amber-300 font-semibold pt-1">
+                                💡 ساهم بأي مبلغ تستطيعه (سواء دولاراً أو ما تيسر)، وبجمع مساهماتكم نصل للهدف بإذن الله.
+                            </p>
+                        </div>
+
+                        <ul class="text-xs text-slate-600 dark:text-gray-300 space-y-2.5 leading-relaxed pt-2 border-t border-slate-200 dark:border-gray-800">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
+                                <span><strong>مساهمة مفتوحة بأي قدر:</strong> لا يُشترط دفع المبلغ كاملاً، بل ساهم بما تقدر عليه، وقليل دائم خير من كثير منقطع.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
+                                <span><strong>أمان وطمأنينة للأهالي:</strong> التثبيت المعتمد عبر Google Play يجعل الأهالي مطمئنين ومحميين بنظام الفحص التلقائي.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
+                                <span><strong>وصول لملايين الأسر:</strong> يسهل البحث عن التطبيق وتنزيله مجاناً لجميع الهواتف بنقرة واحدة.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="https://wa.me/201060911093?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D9%87%D9%85%D8%A9%20%D8%A8%D9%85%D8%A8%D9%84%D8%BA%20%D9%84%D8%AF%D8%B9%D9%85%20%D9%86%D8%B4%D8%B1%20%D8%A7%D9%84%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%20%D8%B9%D9%84%D9%89%20Google%20Play%20(%D8%A7%D9%84%D9%85%D8%B7%D9%84%D9%88%D8%A8%20%D8%AC%D9%85%D8%B9%2025%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1)" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-dark-900 font-extrabold text-sm py-3.5 px-6 rounded-2xl shadow-lg shadow-amber-500/20 transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>المساهمة بأي مبلغ لحساب Google Play ($25 مطلوبة)</span>
+                    </a>
+                </div>
+
+                <!-- Goal 2: Windows PC Support ($5) -->
+                <div class="glass-panel p-8 sm:p-10 rounded-3xl border-cyan-500/40 bg-gradient-to-b from-cyan-500/5 via-white dark:via-dark-800 to-cyan-500/10 relative overflow-hidden flex flex-col justify-between space-y-6 shadow-xl">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 text-cyan-500 flex items-center justify-center text-3xl font-bold">
+                                <i class="fa-brands fa-windows"></i>
+                            </div>
+                            <span class="text-xs bg-cyan-500/20 text-cyan-700 dark:text-cyan-300 px-3 py-1 rounded-full font-extrabold">هدف حماية الكمبيوتر واللابتوب</span>
+                        </div>
+
+                        <div>
+                            <h4 class="text-2xl font-black text-slate-900 dark:text-white">توفير ونشر نسخة Windows</h4>
+                            <p class="text-xs text-slate-500 dark:text-gray-400 mt-1">حماية أجهزة الكمبيوتر المكتبية واللابتوب التي يذاكر عليها الأبناء</p>
+                        </div>
+
+                        <div class="py-2 bg-cyan-500/10 dark:bg-cyan-500/5 p-4 rounded-2xl border border-cyan-500/20 space-y-1">
+                            <div class="text-xs font-bold text-cyan-700 dark:text-cyan-400">إجمالي المبلغ المطلوب جمعه:</div>
+                            <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white flex items-baseline gap-2">
+                                <span class="text-cyan-600 dark:text-cyan-400">5$</span>
+                                <span class="text-sm font-bold text-slate-600 dark:text-gray-300">دولارات فقط للمشروع ككل</span>
+                            </div>
+                            <p class="text-xs text-cyan-700 dark:text-cyan-300 font-semibold pt-1">
+                                💡 ساهم بأي مبلغ تجود به نفسك، فالهدف رمزي ويسير جداً لتغطية تكاليف الاستضافة.
+                            </p>
+                        </div>
+
+                        <ul class="text-xs text-slate-600 dark:text-gray-300 space-y-2.5 leading-relaxed pt-2 border-t border-slate-200 dark:border-gray-800">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-cyan-500 mt-0.5"></i>
+                                <span><strong>ساهم بأي مبلغ يسير:</strong> كل مساهمة مهما كانت بسيطة تعين على إطلاق وتحديث نسخة الويندوز.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-cyan-500 mt-0.5"></i>
+                                <span><strong>حماية أجهزة المذاكرة:</strong> حجب المواقع الإباحية والضارة عن متصفحات Chrome وEdge في شاشات الحواسيب.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-cyan-500 mt-0.5"></i>
+                                <span><strong>استضافة سريعة ومجانية:</strong> تغطية تكلفة خادم تنزيل الملفات وتحديثاتها للمستخدمين دون انقطاع.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="https://wa.me/201060911093?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D9%87%D9%85%D8%A9%20%D8%A8%D9%85%D8%A8%D9%84%D8%BA%20%D9%84%D8%AF%D8%B9%D9%85%20%D9%86%D8%B3%D8%AE%D8%A9%20Windows%20(%D8%A7%D9%84%D9%85%D8%B7%D9%84%D9%88%D8%A8%20%D8%AC%D9%85%D8%B9%205%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%D8%A7%D8%AA)" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-dark-900 font-extrabold text-sm py-3.5 px-6 rounded-2xl shadow-lg shadow-cyan-500/20 transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-windows text-xl"></i>
+                        <span>المساهمة بأي مبلغ لنسخة Windows ($5 مطلوبة)</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Spiritual Card: Charity as Light (الصدقة نور وبرهان يضيء لك القبر والآخرة) -->
+            <div class="glass-panel p-8 sm:p-10 rounded-3xl border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 via-slate-50 to-amber-500/10 dark:from-emerald-950/40 dark:via-dark-800 dark:to-amber-950/30 space-y-6 shadow-2xl relative overflow-hidden">
+                
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-sun"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">بُشراك! الصدقة نورٌ يسعى بين يديك وبرهانٌ في ظلمات القبور</h4>
+                        <p class="text-xs text-slate-500 dark:text-gray-400 font-medium">سهمك في صيانة أعراض المسلمين وحفظ بصر شبابهم صدقة جارية لا تنقطع</p>
+                    </div>
+                </div>
+
+                <!-- Quranic Verses on Light & Multiplied Reward -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-amber-500/20 text-right space-y-2">
+                        <div class="flex items-center gap-2 text-amber-600 dark:text-amber-400 font-bold text-xs">
+                            <i class="fa-solid fa-quran"></i>
+                            <span>سورة الحديد [11 - 12]:</span>
+                        </div>
+                        <p class="quran-font text-base sm:text-lg text-amber-900 dark:text-amber-200 font-bold leading-relaxed">
+                            ﴿ مَّن ذَا الَّذِي يُقْرِضُ اللَّهَ قَرْضًا حَسَنًا فَيُضَاعِفَهُ لَهُ وَلَهُ أَجْرٌ كَرِيمٌ ۞ يَوْمَ تَرَى الْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ يَسْعَىٰ نُورُهُم بَيْنَ أَيْدِيهِمْ وَبِأَيْمَانِهِم بُشْرَاكُمُ الْيَوْمَ جَنَّاتٌ تَجْرِي مِن تَحْتِهَا الْأَنْهَارُ ﴾
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-emerald-500/20 text-right space-y-2">
+                        <div class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold text-xs">
+                            <i class="fa-solid fa-quran"></i>
+                            <span>سورة الحديد [18]:</span>
+                        </div>
+                        <p class="quran-font text-base sm:text-lg text-emerald-900 dark:text-emerald-200 font-bold leading-relaxed">
+                            ﴿ إِنَّ الْمُصَّدِّقِينَ وَالْمُصَّدِّقَاتِ وَأَقْرَضُوا اللَّهَ قَرْضًا حَسَنًا يُضَاعَفُ لَهُمْ وَلَهُمْ أَجْرٌ كَرِيمٌ ﴾
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Prophetic Hadiths -->
+                <div class="p-5 rounded-2xl bg-emerald-950/20 dark:bg-slate-900/90 border border-emerald-500/20 space-y-3 text-right">
+                    <div class="flex flex-wrap items-center gap-6 text-sm sm:text-base text-slate-700 dark:text-gray-200">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                            <span>قال رسول الله ﷺ: « <strong>وَالصَّدَقَةُ بُرْهَانٌ</strong> » <span class="text-xs text-gray-500">(أي نورٌ وحجة قاطعة لصاحبها يوم القيامة)</span>.</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                            <span>وقال ﷺ: « <strong>إِنَّ الصَّدَقَةَ لَتُطْفِئُ عَنْ أَهْلِهَا حَرَّ الْقُبُورِ، وَإِنَّمَا يَسْتَظِلُّ الْمُؤْمِنُ يَوْمَ الْقِيَامَةِ فِي ظِلِّ صَدَقَتِهِ</strong> ».</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                            <span>وقال ﷺ: « <strong>مَا نَقَصَتْ صَدَقَةٌ مِنْ مَالٍ</strong> ».</span>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-slate-600 dark:text-gray-400 leading-relaxed pt-2 border-t border-slate-200 dark:border-gray-800">
+                        تخيل يا أخي الحبيب أن مساهمتك بأي مبلغ تجود به نفسك (مهما كان يسيراً للمساعدة في جمع الـ 25$ لمتجر بلاي أو الـ 5$ للويندوز) قد تكون سبباً في حماية آلاف الأطفال والشباب من الفواحش وذنوب الخلوات، فتأتي يوم القيامة بصحائف مضيئة كالجبال لم تكن تحتسبها، وتكون لك نوراً في ظلمة القبر وعلى الصراط. قال ﷺ: « <strong>اتَّقُوا النَّارَ وَلَوْ بِشِقِّ تَمْرَةٍ</strong> ».
+                    </p>
+                </div>
+
+                <!-- Overall Contact CTA -->
+                <div class="text-center pt-2">
+                    <a href="https://wa.me/201060911093?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D9%87%D9%85%D8%A9%20%D8%A8%D8%A3%D9%8A%20%D9%85%D8%A8%D9%84%D8%BA%20%D9%81%D9%8A%20%D8%AF%D8%B9%D9%85%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20SafeWebGuard" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba59] text-dark-900 font-extrabold text-base px-8 py-3.5 rounded-2xl shadow-lg shadow-[#25D366]/25 transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>تواصل معنا عبر واتساب للمساهمة بأي مبلغ (+201060911093)</span>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Spiritual Note & Developer Contact Section -->
+    <section id="contact" class="py-24 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-panel p-8 sm:p-12 rounded-3xl border-slate-200 dark:border-gray-800 text-center space-y-8 relative">
+                
+                <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-emerald-500 to-cyan-500 text-dark-900 flex items-center justify-center text-3xl mx-auto shadow-lg shadow-emerald-500/25">
+                    <i class="fa-solid fa-hands-praying"></i>
+                </div>
+
+                <div class="space-y-3">
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">رسالة رجاء من القلب</h3>
+                    <p class="text-amber-600 dark:text-amber-300 quran-font text-2xl sm:text-3xl font-bold">
+                        « لا تنساني من صالح دعائك بظهر الغيب »
+                    </p>
+                    <p class="text-slate-600 dark:text-gray-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed pt-2">
+                        إن أصبت فمن توفيق الله وحده، وإن قصرت فمن نفسي والشيطان. نسأل الله أن يجعل هذا العمل خالصاً لوجهه الكريم وسبباً في نجاة شبابنا وبناتنا وعمارة البيوت بالتقوى.
+                    </p>
+                </div>
+
+                <!-- Contact Button (WhatsApp) -->
+                <div class="pt-4 flex items-center justify-center">
+                    
+                    <!-- WhatsApp Button -->
+                    <a href="https://wa.me/201060911093" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20ba59] text-dark-900 font-extrabold text-lg px-10 py-4 rounded-2xl shadow-xl shadow-[#25D366]/25 transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>تواصل معنا مباشرة عبر واتساب (+201060911093)</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-200 dark:border-gray-800 text-center text-xs text-slate-500 dark:text-gray-500 space-y-4">
+        <div class="flex items-center justify-center gap-2">
+            <img src="logo.png" alt="SafeWebGuard Logo" class="w-7 h-7 rounded-full object-cover border border-emerald-500/30">
+            <span class="text-slate-800 dark:text-gray-300 font-bold">SafeWebGuard - حارس الويب العائلي</span>
+        </div>
+        <p>جميع الحقوق محفوظة ومتاحة لوجه الله تعالى لكل مسلم • سنة 2026</p>
+    </footer>
+
+    <!-- Download Instruction Modal -->
+    <div id="download-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="glass-panel bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-3xl max-w-md w-full border border-emerald-500/30 text-right space-y-5 animate-float shadow-2xl">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-gray-800">
+                <div class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold">
+                    <i class="fa-solid fa-circle-check text-xl"></i>
+                    <span>بدأ التحميل بنجاح!</span>
+                </div>
+                <button id="close-modal-btn" class="text-gray-400 hover:text-slate-900 dark:hover:text-white text-lg p-1">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <p class="text-slate-700 dark:text-gray-300 text-sm leading-relaxed">
+                يتم الآن تنزيل ملف <strong>SafeWebGuard-Family.apk</strong> على جهازك. 
+            </p>
+
+            <div class="bg-slate-100 dark:bg-slate-950 p-4 rounded-xl border border-slate-200 dark:border-gray-800 text-xs text-slate-600 dark:text-gray-400 space-y-2">
+                <div class="font-bold text-emerald-600 dark:text-emerald-300">💡 تعليمات بعد اكتمال التحميل:</div>
+                <div>1. افتح الملف من شريط الإشعارات أو مجلد "التنزيلات".</div>
+                <div>2. إذا ظهر تحذير أمان أندرويد، اضغط على <strong>"تثبيت على أي حال"</strong> أو اسمح بالتثبيت من المتصفح.</div>
+                <div>3. افتح التطبيق، عيّن رمز الـ PIN، وفعّل خدمة إمكانية الوصول ودرع الـ VPN.</div>
+            </div>
+
+            <button onclick="document.getElementById('download-modal').classList.add('hidden')" class="w-full bg-emerald-500 hover:bg-emerald-600 text-dark-900 font-bold py-3 rounded-xl transition-all shadow-md">
+                فهمت ذلك، شكراً لك
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript logic -->
+    <script src="app.js"></script>
+</body>
+</html>
